@@ -136,16 +136,16 @@ node_images = {
     const imageDiv = document.getElementById('image');
 
     const storyText = nodes[currentNode]["Text"];
-    const imageSrc = node_images[currentNode];  // Get the image source for the current node
+    const imageSrc = node_images[currentNode];  
 
-    // Display story text
+    // Tekst price
     storyDiv.innerHTML = `<p>${formatStoryText(storyText)}</p>`;
 
-    // Display image
+    // Slika u div
     imageDiv.innerHTML = `<img src="${imageSrc}" alt="Image for Node ${currentNode}" />`;
 }
 function formatStoryText(text) {
-    // Regular expression to find URLs within the text
+    // REGEX u slucaju da tekst price ima link
     const urlRegex = /(https?:\/\/[^\s]+)/g;
     return text.replace(urlRegex, '<a href="$1" target="_blank">$1</a>');
 }
@@ -166,11 +166,11 @@ function displayOptions(nodeId) {
 
             const button = document.createElement('button');
             button.textContent = optionText;
-            button.className = 'option-button'; // Add a class for styling
+            button.className = 'option-button'; 
             button.addEventListener('click', () => navigate(nextNode));
 
             optionsContainer.appendChild(button);
-            optionsContainer.appendChild(document.createElement('br')); // Add a line break
+            optionsContainer.appendChild(document.createElement('br'));
         }
     }
 }

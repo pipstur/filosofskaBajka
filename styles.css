@@ -27,17 +27,17 @@ body {
     border-radius: 10px;
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Make the box take full width */
-    box-sizing: border-box; /* Include padding and border in the width */
-    text-align: center; /* Center the text */
+    width: 100%; 
+    box-sizing: border-box;
+    text-align: center; 
 }
 
 .box {
     border: 2px solid #333;
     padding: 20px;
     border-radius: 10px;
-    box-sizing: border-box; /* Include padding and border in the width */
-    text-align: left; /* Align the text to the left */
+    box-sizing: border-box; 
+    text-align: left;
 }
 
 #options-container button {
@@ -61,27 +61,27 @@ body {
 
 .option-button {
     display: block;
-    margin-bottom: 5px; /* Adjust the spacing between buttons as needed */
+    margin-bottom: 5px; 
 }
 
 .dark-mode {
-    background-color: #222; /* Dark background color */
+    background-color: #222; 
     color: #fff; 
 }
 
 
 body.dark-mode #story {
-    background-color: #222; /* Dark background color for story */
-    color: #fff; /* Light text color for story */
+    background-color: #222; 
+    color: #fff; 
 }
 
 body.dark-mode button {
-    background-color: #333; /* Dark background color for button */
-    color: #fff; /* Light text color for button */
-    border: 2px solid #fff; /* White border for button */
+    background-color: #333; 
+    color: #fff; 
+    border: 2px solid #fff; 
 }
 
 body.dark-mode button:hover {
-    background-color: #555; /* Dark background color for button on hover */
+    background-color: #555;
 }
 
