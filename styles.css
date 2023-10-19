@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-light);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: var(--text-light);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80%;
+    margin: auto;
+}
+
+
+
+#story{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Make the box take full width */
+    box-sizing: border-box; /* Include padding and border in the width */
+    text-align: center; /* Center the text */
+}
+
+.box {
+    border: 2px solid #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box; /* Include padding and border in the width */
+    text-align: left; /* Align the text to the left */
+}
+
+#options-container button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#options-container button:hover {
+    background-color: #45a049;
+}
+
+.option-button {
+    display: block;
+    margin-bottom: 5px; /* Adjust the spacing between buttons as needed */
+}
+
+.dark-mode {
+    background-color: #222; /* Dark background color */
+    color: #fff; 
+}
+
+
+body.dark-mode #story {
+    background-color: #222; /* Dark background color for story */
+    color: #fff; /* Light text color for story */
+}
+
+body.dark-mode button {
+    background-color: #333; /* Dark background color for button */
+    color: #fff; /* Light text color for button */
+    border: 2px solid #fff; /* White border for button */
+}
+
+body.dark-mode button:hover {
+    background-color: #555; /* Dark background color for button on hover */
+}
+

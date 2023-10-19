@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Filosofska bajka</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>function toggleDarkMode() {
+        const body = document.body;
+        body.classList.toggle('dark-mode');
+    }</script>
+</head>
+<body>
+    <button onclick="toggleDarkMode()">Dark Mode</button>
+    <div id="image"></div>
+    <div id="story">
+        <!-- Story text will be displayed here -->
+    </div>
+    <div id="options-container">
+        <!-- Options will be displayed here -->
+    </div>
+
+    <script>
+        const nodes = {
+    1: {
+        "Option 1": {"Next": 2, "Text": "Окрећеш се на другу страну и настављаш разговор са пријатељима, правећи се да га не примећујеш"},
+        "Option 2": {"Next": 3, "Text": "Прилазиш човеку"},
+        "Text": "Стојиш испред ученичког улаза у нашу школу. Велики је одмор. Док са пријатељима и пријатељицама стојиш и причаш, изненада примећујеш како крај самог улаза у школу стоји један човек. Обучен је у плаво одело, какво су осамдесетих година носили радници на грађевинама. Иако је дан, примећујеш да у руци држи упаљен фењер на гас, чија се слаба светлост једва назире иза почађалог стакла. Зачуђено га посматраш и одједном схваташ да и он гледа у тебе. Слободном руком даје ти знак да приђеш. "
+    },
+    2: {
+        "Option 1": {"Next": 5, "Text": "Explore the path"},
+        "Option 2": {"Next": 6, "Text": "Follow the sound"},
+        "Option 3": {"Next": 7, "Text": "Climb a tree"},
+        "Text": "Бранимир узима од тебе стари фењер и руком даје знак да га пратиш. Док корачате ка улазу у школу, сумрачни дан и зграда Техноарта нестају као магле, а пред тобом се развија ведар и  сунчан дан. Стојиш на путељку који се протеже по дивној цветној ливади. Звездарско брдо,  или како год се сада зове, благом стрмином успиње се према обронку, који готово у  потпуности покрива велика четвороугаона грађевина, која би, да нема велике прозоре  окренуте споља, подсећала на тврђаву. За тренутак, осетиш додир влати траве на својим  стопалима, а онда схватиш да више немаш обућу са чарапама, већ су ти голе ноге одевене у  кожом увезане сандале. Твоја јакна претворила се дугу, необичну хаљину обмотану великим  чаршавом, али ти је из неког разлога десно раме остало голо. Тада примећујеш, да је и Бранимир одевен на сличан начин као ти, само што његово лице сада краси лепо негована брада. Уместо чађавог фењера, у руци му је мала, керамичка светиљка, која те помало подсећа на Аладинову лампу.   Можда би било корисно да овде прочиташ нешто о римским лампама  http://politikin-zabavnik.co.rs/pz/tekstovi/si%D1%98am-bogovima-i-ljudima  "
+    },
+    3: {
+        "Option 1": {"Next": 8, "Text": "Enter the cave"},
+        "Option 2": {"Next": 9, "Text": "Go back"},
+        "Option 3": {"Next": 10, "Text": "Look around"},
+        "Text": "You enter the cave. Inside, it's dark and damp. You can hear a faint noise echoing. Do you proceed further or go back?"
+    },
+    4: {
+        "Option 1": {"Next": 11, "Text": "Investigate the camp"},
+        "Option 2": {"Next": 12, "Text": "Continue on the path"},
+        "Option 3": {"Next": 13, "Text": "Rest a while"},
+        "Text": "You choose to stay put. It's getting late. What do you do?"
+    },
+    5: {
+        "Option 1": {"Next": 14, "Text": "Follow the stream"},
+        "Option 2": {"Next": 15, "Text": "Climb the hill"},
+        "Option 3": {"Next": 16, "Text": "Set up camp"},
+        "Text": "You choose to explore the path. What's your next move?"
+    },
+    6: {
+        "Option 1": {"Next": 16, "Text": "Call out"},
+        "Text": "You choose to follow the sound. It's coming from deeper in the forest. What will you do?"
+    },
+    7: {
+        "Option 1": {"Next": 16, "Text": "Explore the surroundings"},
+        "Option 2": {"Next": 16, "Text": "Descend into the valley"},
+        "Option 3": {"Next": 16, "Text": "Climb a tree for a better view"},
+        "Text": "You choose to climb a tree. From up there, you see a few different paths. What do you do?"
+    },
+    8: {
+        "Option 1": {"Next": 16, "Text": "Keep moving deeper into the cave"},
+        "Text": "You decide to enter the cave. It's dark and eerie. What's your next move?"
+    },
+    9: {
+        "Option 1": {"Next": 16, "Text": "Explore the forest"},
+        "Text": "You decide to go back. As you exit the cave, you notice a strange symbol on the entrance. What will you do?"
+    },
+    10: {
+        "Option 1": {"Next": 16, "Text": "Search for clues"},
+        "Option 2": {"Next": 16, "Text": "Continue exploring"},
+        "Text": "You choose to look around. What are you looking for?"
+    },
+    11: {
+        "Option 1": null,
+        "Option 2": null,
+        "Option 3": null,
+        "Text": "You investigate the camp. You find a map that leads to a hidden treasure. Congratulations!"
+    },
+    12: {
+        "Option 1": null,
+        "Option 2": null,
+        "Option 3": null,
+        "Text": "You continue on the path without investigating the camp."
+    },
+    13: {
+        "Option 1":null,
+        "Option 2":null,
+        "Option 3":null,
+        "Text": "You decide to rest and recover for the journey ahead."
+    },
+    14: {
+        "Option 1": null,
+        "Option 2": null,
+        "Option 3": null,
+        "Text": "You follow the stream and discover a hidden grove. It's peaceful here."
+    },
+    15: {
+        "Option 1": null,
+        "Option 2": null,
+        "Option 3": null,
+        "Text": "You climb the hill and get a panoramic view of the forest. It's breathtaking."
+    },
+    16: {
+        "Option 1": null,
+        "Option 2": null,
+        "Option 3": null,
+        "Text": "You set up camp and rest for the night."
+    }
+};
+node_images = {
+    1: "https://picsum.photos/200?seed=1",   
+    2: "https://picsum.photos/200?seed=2",   
+    3: "https://picsum.photos/200?seed=3",   
+    4: "https://picsum.photos/200?seed=4",   
+    5: "https://picsum.photos/200?seed=5",   
+    6: "https://picsum.photos/200?seed=6",   
+    7: "https://picsum.photos/200?seed=7",   
+    8: "https://picsum.photos/200?seed=8",   
+    9: "https://picsum.photos/200?seed=9",   
+    10: "https://picsum.photos/200?seed=10", 
+    11: "https://picsum.photos/200?seed=11", 
+    12: "https://picsum.photos/200?seed=12", 
+    13: "https://picsum.photos/200?seed=13", 
+    14: "https://picsum.photos/200?seed=14", 
+    15: "https://picsum.photos/200?seed=15",
+    16: "https://picsum.photos/200?seed=16"   
+}
+        
+
+        let currentNode = 1;
+
+        function displayStory() {
+    const storyDiv = document.getElementById('story');
+    const imageDiv = document.getElementById('image');
+
+    const storyText = nodes[currentNode]["Text"];
+    const imageSrc = node_images[currentNode];  // Get the image source for the current node
+
+    // Display story text
+    storyDiv.innerHTML = `<p>${formatStoryText(storyText)}</p>`;
+
+    // Display image
+    imageDiv.innerHTML = `<img src="${imageSrc}" alt="Image for Node ${currentNode}" />`;
+}
+function formatStoryText(text) {
+    // Regular expression to find URLs within the text
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, '<a href="$1" target="_blank">$1</a>');
+}
+
+
+function displayOptions(nodeId) {
+    const options = nodes[nodeId];
+    const optionsContainer = document.getElementById('options-container');
+    optionsContainer.innerHTML = '';
+
+    for (let i = 1; i <= 3; i++) {
+        const optionKey = `Option ${i}`;
+        const option = options && options[optionKey];
+
+        if (option) {
+            const optionText = option['Text'];
+            const nextNode = option['Next'];
+
+            const button = document.createElement('button');
+            button.textContent = optionText;
+            button.className = 'option-button'; // Add a class for styling
+            button.addEventListener('click', () => navigate(nextNode));
+
+            optionsContainer.appendChild(button);
+            optionsContainer.appendChild(document.createElement('br')); // Add a line break
+        }
+    }
+}
+
+
+function navigate(nextNodeId) {
+    // Update the current node
+    currentNode = nextNodeId;
+
+    displayStory();
+    displayOptions(currentNode);
+}
+
+
+
+        // Initial display
+        displayStory();
+        displayOptions(1);
+    </script>
+    <style> .option-button {
+        display: block;
+        margin-bottom: 5px; /* Adjust the spacing between buttons as needed */
+    }</style>
+</body>
+</html>
