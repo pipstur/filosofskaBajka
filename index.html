@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8"> 
     <title>Filosofska bajka</title>
     <link rel="stylesheet" href="styles.css">
     <script>function toggleDarkMode() {
@@ -129,26 +130,26 @@ node_images = {
 }
         
 
-        let currentNode = 1;
+    let currentNode = 1;
 
-        function displayStory() {
-    const storyDiv = document.getElementById('story');
-    const imageDiv = document.getElementById('image');
+    function displayStory() {
+        const storyDiv = document.getElementById('story');
+        const imageDiv = document.getElementById('image');
 
-    const storyText = nodes[currentNode]["Text"];
-    const imageSrc = node_images[currentNode];  
+        const storyText = nodes[currentNode]["Text"];
+        const imageSrc = node_images[currentNode];  
 
-    // Tekst price
-    storyDiv.innerHTML = `<p>${formatStoryText(storyText)}</p>`;
+        // Tekst price
+        storyDiv.innerHTML = `<p>${formatStoryText(storyText)}</p>`;
 
-    // Slika u div
-    imageDiv.innerHTML = `<img src="${imageSrc}" alt="Image for Node ${currentNode}" />`;
-}
-function formatStoryText(text) {
-    // REGEX u slucaju da tekst price ima link
-    const urlRegex = /(https?:\/\/[^\s]+)/g;
-    return text.replace(urlRegex, '<a href="$1" target="_blank">$1</a>');
-}
+        // Slika u div
+        imageDiv.innerHTML = `<img src="${imageSrc}" alt="Image for Node ${currentNode}" />`;
+    }
+    function formatStoryText(text) {
+        // REGEX u slucaju da tekst price ima link
+        const urlRegex = /(https?:\/\/[^\s]+)/g;
+        return text.replace(urlRegex, '<a href="$1" target="_blank">$1</a>');
+    }
 
 
 function displayOptions(nodeId) {
@@ -183,9 +184,6 @@ function navigate(nextNodeId) {
     displayStory();
     displayOptions(currentNode);
 }
-
-
-
         // Initial display
         displayStory();
         displayOptions(1);

@@ -9,6 +9,7 @@ body {
     justify-content: center;
     height: 100vh;
     color: var(--text-light);
+    font-size: 18px;
 }
 
 .container {
@@ -22,6 +23,7 @@ body {
 
 
 #story{
+    font-size: 24px;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -50,7 +52,7 @@ body {
     color: white;
     text-align: center;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 25px;
     border-radius: 5px;
     cursor: pointer;
 }
